@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Exercicio</string>
-    <string name="action_settings">Settings</string>
-    <string name="action_favorite">Favorite</string>
+    <string name="addButton">Add</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="addItemLabel">Item</string>
+    <string name="ok">OK</string>
+    <string name="cancel">CANCELAR</string>
 </resources>
