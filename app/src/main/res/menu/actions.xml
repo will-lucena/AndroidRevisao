@@ -2,20 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- "Mark Favorite", should appear as action button if possible -->
+    <!-- "Mark Favorite", should appear as actions button if possible -->
     <item
-        android:id="@+id/add"
+        android:id="@+id/actionsAdd"
         android:icon="@drawable/baseline_add_white_18dp"
         android:title="@string/addButton"
         app:showAsAction="ifRoom"/>
 
-    <item android:id="@+id/edit"
+    <item android:id="@+id/actionsEdit"
         android:icon="@drawable/baseline_edit_white_18dp"
         android:title="Edit"
+        app:showAsAction="always"
         android:visible="false"/>
 
-    <item android:id="@+id/remove"
+    <item android:id="@+id/actionsRemove"
         android:icon="@drawable/baseline_delete_white_18dp"
         android:title="Remove"
+        app:showAsAction="always"
         android:visible="false"/>
 </menu>
