@@ -35,9 +35,16 @@ public class MainActivity extends AppCompatActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItemAnterior = selectedItem;
                 selectedItem = adapter.getItem(position);
-                view.setSelected(true);
-                hideAddButton();
+
+                if (selectedItemAnterior != null && selectedItemAnterior.equals(selectedItem)) {
+                    selectedItem = null;
+                    showAddButton();
+                } else {
+                    view.setSelected(true);
+                    hideAddButton();
+                }
             }
         });
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
@@ -77,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
                 showAddButton();
                 return true;
             case R.id.actionsEdit:
-                //Toast.makeText(getApplicationContext(), list.getSelectedItemPosition(), Toast.LENGTH_SHORT).show();
                 AddItemDialog.show(getSupportFragmentManager(), new AddItemDialog.OnTextListener() {
                     @Override
                     public void onSetTExt(String text) {
@@ -90,8 +96,6 @@ public class MainActivity extends AppCompatActivity {
                 showAddButton();
                 return true;
             default:
-                // If we got here, the user's actions was not recognized.
-                // Invoke the superclass to handle it.
                 return super.onOptionsItemSelected(item);
         }
     }
